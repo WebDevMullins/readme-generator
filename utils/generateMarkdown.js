@@ -1,5 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+//  Get license badges
 function renderLicenseBadge(license) {
 	if (license === 'MIT') {
 		return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
@@ -13,9 +12,7 @@ function renderLicenseBadge(license) {
 		return ''
 	}
 }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+//  Show license in table of contents
 function renderLicenseLink(license) {
 	if (license !== 'None') {
 		return `- [License](#license)`
@@ -23,9 +20,7 @@ function renderLicenseLink(license) {
 		return ''
 	}
 }
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+//  Show license section
 function renderLicenseSection(license) {
 	if (license !== 'None') {
 		return `## License
@@ -37,8 +32,7 @@ ${renderLicenseBadge(license)}`
 		return ''
 	}
 }
-
-// TODO: Create a function to generate markdown for README
+//  Display all data
 function generateMarkdown(data) {
 	const licenseBadge = renderLicenseBadge(data.license)
 	const licenseLink = renderLicenseLink(data.license)
@@ -48,6 +42,9 @@ function generateMarkdown(data) {
 
 ${licenseBadge}
 
+## Description
+${data.description}
+
 ## Table of Contents
 - [Description](#description)
 - [Installation](#installation)
@@ -56,9 +53,6 @@ ${licenseLink}
 - [Contributing](#contributing)
 - [Tests](#tests)
 - [Questions](#questions)
-
-## Description
-${data.description}
 
 ## Installation
 ${data.installation}
@@ -75,7 +69,11 @@ ${data.contributing}
 ${data.tests}
 
 ## Questions
-For any questions, please reach out at [GitHub](https://github.com/${data.githubUsername}) or email at ${data.email}.
+For any additional questions, please reach out -
+
+GitHub: [${data.githubUsername}](https://github.com/${data.githubUsername})
+
+Email: ${data.email}
 `
 }
 
