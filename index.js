@@ -60,7 +60,7 @@ function writeToFile(fileName, data) {
 // Start prompt of questions to user and write to file
 function init() {
 	inquirer.prompt(questions).then((response) => {
-		writeToFile('README.md', generateMarkdown(response))
+		writeToFile('./output/README.md', generateMarkdown(response))
 	})
 }
 
