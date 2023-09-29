@@ -54,14 +54,13 @@ const questions = [
 // Write all data to the README.md file
 function writeToFile(fileName, data) {
 	fs.writeFile(fileName, data, (err) => {
-		if (err) throw err
-		console.log('README.md has been created')
+		err ? console.log(err) : console.log('README.md has been created')
 	})
 }
 // Start prompt of questions to user and write to file
 function init() {
-	inquirer.prompt(questions).then((answers) => {
-		writeToFile('README.md', generateMarkdown(answers))
+	inquirer.prompt(questions).then((response) => {
+		writeToFile('README.md', generateMarkdown(response))
 	})
 }
 
