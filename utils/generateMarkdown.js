@@ -31,17 +31,17 @@ ${renderLicenseBadge(license)}`
 }
 
 //  Display all response
-function generateMarkdown(response) {
-	const licenseBadge = renderLicenseBadge(response.license)
-	const licenseLink = renderLicenseLink(response.license)
-	const licenseSection = renderLicenseSection(response.license)
+function generateMarkdown( { title, description, installation, usage, contributing, tests, license, githubUsername, email }) {
+	const licenseBadge = renderLicenseBadge(license)
+	const licenseLink = renderLicenseLink(license)
+	const licenseSection = renderLicenseSection(license)
 	return `
-# ${response.title}
+# ${title}
 
 ${licenseBadge}
 
 ## Description
-${response.description}
+${description}
 
 ## Table of Contents
 - [Description](#description)
@@ -53,25 +53,25 @@ ${licenseLink}
 - [Questions](#questions)
 
 ## Installation
-${response.installation}
+${installation}
 
 ## Usage
-${response.usage}
+${usage}
 
 ${licenseSection}
 
 ## Contributing
-${response.contributing}
+${contributing}
 
 ## Tests
-${response.tests}
+${tests}
 
 ## Questions
 For any additional questions, please reach out -
 
-GitHub: [${response.githubUsername}](https://github.com/${response.githubUsername})
+GitHub: [${githubUsername}](https://github.com/${githubUsername})
 
-Email: ${response.email}
+Email: ${email}
 `
 }
 
